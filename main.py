@@ -5,7 +5,7 @@ from datasoerce import CarbonFootPrint
 class Window(tk.Tk):
     def __init__(self):
         super().__init__()
-
+        
 
 #主程式
 def main():
