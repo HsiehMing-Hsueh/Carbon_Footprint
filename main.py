@@ -21,7 +21,7 @@ def main():
     
     
     window = Window()
-    window.title("碳足跡CarbonFootPrint")
+    window.title("碳足跡CarbonFootPrint改一次title")
     window.mainloop()
 #啟動點
 if __name__ == "__main__":
