@@ -9,13 +9,17 @@ class Window(tk.Tk):
 
 #主程式
 def main():
+    
     try:
         aqi_list = CarbonFootPrint.download_aqi()
+        print(type(aqi_list))
+        
+        
     except Exception as err:
         print(str(err))
         return
-    for item in aqi_list:
-        print(item)
+    
+    
     window = Window()
     window.title("碳足跡CarbonFootPrint")
     window.mainloop()
