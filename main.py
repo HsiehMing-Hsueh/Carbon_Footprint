@@ -14,9 +14,9 @@ class Window(tk.Tk):
         self.option_add('*font',('verdana', 12, 'bold'))
         self.title("碳排放的窗口")
         
-        Button(self, text='石油').pack(side=tk.RIGHT)
-        Button(self, text='煤炭').pack(side=tk.RIGHT)
-        Button(self, text='天然氣').pack(side=tk.RIGHT)
+        Button(topFrame, text='石油').pack(side=tk.RIGHT)
+        Button(topFrame, text='煤炭').pack(side=tk.RIGHT)
+        Button(topFrame, text='天然氣').pack(side=tk.RIGHT)
             
         # ----------------建立logo--------------------
         logoImage = Image.open('./Images/co2logo.png')
