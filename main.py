@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import Button ,Frame
 from datasoerce import CarbonFootPrint
 from PIL import Image, ImageTk
 
@@ -9,6 +10,14 @@ class Window(tk.Tk):
         #建立topFrame
         topFrame = ttk.Labelframe(self)
         topFrame.pack()
+        #----------------建立按鈕----------------------------
+        self.option_add('*font',('verdana', 12, 'bold'))
+        self.title("碳排放的窗口")
+        
+        Button(self, text='石油').pack(side=tk.RIGHT)
+        Button(self, text='煤炭').pack(side=tk.RIGHT)
+        Button(self, text='天然氣').pack(side=tk.RIGHT)
+            
         # ----------------建立logo--------------------
         logoImage = Image.open('./Images/co2logo.png')
         resizeImage = logoImage.resize((89,82), Image.LANCZOS)
