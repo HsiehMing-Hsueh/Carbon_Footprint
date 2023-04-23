@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import Button ,Frame
 from datasoerce import CarbonFootPrint
 from PIL import Image, ImageTk
+import csv
 
 class Window(tk.Tk):
     def __init__(self):
@@ -22,7 +23,12 @@ class Window(tk.Tk):
         comboBoxFrame = ttk.LabelFrame(self,text="Combo Box")
         comboBoxFrame.pack(side=tk.LEFT,fill=tk.Y)
 
-        comboBoxValues  = ('請選擇國家',)
+        csv_filename = 'a.csv'
+        with open(csv_filename) as f:
+            reader = csv.reader(f)
+            lst = list(tuple(line) for line in reader)
+            lst.insert(0,'請選擇一個國家')
+        comboBoxValues  = (lst)   
 
         comboBox = ttk.Combobox(comboBoxFrame,state= "readonly")
         comboBox.pack()
