@@ -18,6 +18,18 @@ class Window(tk.Tk):
         Button(topFrame, text='煤炭').pack(side=tk.RIGHT)
         Button(topFrame, text='天然氣').pack(side=tk.RIGHT)
             
+        # --------------建立combobox--------------------------
+        comboBoxFrame = ttk.LabelFrame(self,text="Combo Box")
+        comboBoxFrame.pack(side=tk.LEFT,fill=tk.Y)
+
+        comboBoxValues  = ('請選擇國家',)
+
+        comboBox = ttk.Combobox(comboBoxFrame,state= "readonly")
+        comboBox.pack()
+        comboBox['values'] = comboBoxValues        
+        comboBox.current(0)
+        comboBox.pack(side=tk.LEFT)
+
         # ----------------建立logo--------------------
         logoImage = Image.open('./Images/co2logo.png')
         resizeImage = logoImage.resize((89,82), Image.LANCZOS)
