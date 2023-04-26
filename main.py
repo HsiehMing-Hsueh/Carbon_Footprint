@@ -60,14 +60,17 @@ class Window(tk.Tk):
         tree.column("#2", minwidth=0, width=100)
         tree.heading('#3', text='co2')
         tree.column("#3", minwidth=0, width=30)
-        tree.pack(side=tk.RIGHT)
-
+        tree.pack(side=tk.LEFT)
+        #----------幫treeview加scrollbar----------------------------------
+        scrollbar = ttk.Scrollbar(treeViewFrame, command=tree.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        tree.config(yscrollcommand=scrollbar.set)
 #主程式
 def main():
     
     try:
-        aqi_list = CarbonFootPrint.download_aqi()
-        print(type(aqi_list))
+        api_list = CarbonFootPrint.download_api()
+        print(type(api_list))
         
         
     except Exception as err:
